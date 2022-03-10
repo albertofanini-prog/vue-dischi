@@ -44,5 +44,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .album_wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px 20px;
+        padding: 3% 20%;
+    }
 </style>
