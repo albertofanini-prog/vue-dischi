@@ -22,27 +22,26 @@ export default {
 <style lang="scss">
     .album{
         width: 18%;
-        height: 350px;
         background-color: #2E3A46;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         img{
-            width: 150px;
-            height: 150px;
-            padding: 10px 0px;
+            width: 80%;
+            height: 50%;
+            padding: 15px 0px 20px 0px;
         }
         h5{
             text-transform: uppercase;
             color: white;
-            font-size: 22px;
-            padding: 5px 5px;
+            font-size: 18px;
+            padding: 0px 10px;
         }
         span{
             color: silver;
-            font-size: 16px;
-            padding: 2px 0px;
+            font-size: 14px;
+            padding: 5px 0px;
         }
     }
 </style>

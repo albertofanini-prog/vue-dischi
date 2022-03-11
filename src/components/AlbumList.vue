@@ -1,7 +1,9 @@
 <template>
     <section>
         <div class="container">
-            <div class="album_wrapper">
+            <!-- <div v-if="isLoading" class="loading"></div> -->
+
+            <div v-cloak class="album_wrapper">
                 <OneAlbum v-for="(album, index) in albums" :key="index" :OneAlbum="album"/>
             </div>
         </div>
@@ -20,6 +22,7 @@ export default {
     data() {
         return {
             albums:[],
+            isLoading: true,
         }
     },
     methods:{
@@ -29,12 +32,14 @@ export default {
             .then( res => {
                 console.log(res.data.response); //res.data = dati ricevuti dal server
                 this.albums = res.data.response; //array di dati = dati ricevuti dal server
+                
             })
+            .finally( () => (this.isLoading = false))
             //Ricevere errori dal server:
             // .catch( err => {
             //     console.warn(err.response);
             // })
-        }
+        },
     },
     created(){
         //Fornire i dati 
@@ -44,11 +49,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section{
+    height: 100%;
+    // border: 2px solid yellow;
+    display: flex;
+    align-items: center;
+} .container{
+        height: 100%;
+    }
     .album_wrapper{
+        height: 100%;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
         gap: 15px 20px;
-        padding: 3% 20%;
+        padding: 1% 20%;
+        // border: 1px solid red;
+        .loading {
+        background-color: red;
+        height: 400px;
+        width: 400px;
+        }
     }
 </style>

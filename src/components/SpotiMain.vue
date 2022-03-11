@@ -19,5 +19,8 @@ export default {
     main{
         height: 90vh;
         background-color: #1E2D3B;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 </style>
